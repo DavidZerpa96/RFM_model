@@ -71,6 +71,7 @@ By combining these metrics, businesses can classify their customers into meaning
 - `RFModelK-means.ipynb`: Jupyter Notebook containing the entire analysis.
 - `online_retail_listing.csv`: Dataset used in the project.
 - `README.md`: Documentation for the project.
+- `requirements.txt`: To import the necessary libraries.
 
 ---
 
