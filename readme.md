@@ -1,3 +1,107 @@
+# Modelo RFM con K-Means para Ventas Minoristas
+
+## Resumen
+Este proyecto demuestra la aplicación del **análisis RFM** combinado con **clustering K-Means** para segmentar clientes según su comportamiento de compra. El proyecto utiliza un conjunto de datos de transacciones minoristas obtenido de Kaggle.
+
+**Fuente del Dataset:** [Online Retail Listing - Kaggle](https://www.kaggle.com/datasets/ilkeryildiz/online-retail-listing)
+
+---
+
+## ¿Qué es el análisis RFM?
+El análisis RFM es un método utilizado en marketing para analizar y segmentar clientes basándose en tres dimensiones clave:
+
+- **Recencia (R):** Cuán recientemente un cliente realizó una compra.
+- **Frecuencia (F):** Con qué frecuencia un cliente realiza compras.
+- **Valor Monetario (M):** Cuánto dinero gasta un cliente.
+
+Al combinar estas métricas, las empresas pueden clasificar a sus clientes en segmentos significativos para optimizar sus estrategias de marketing y mejorar la retención de clientes.
+
+---
+
+## ¿Qué es el clustering K-Means?
+**K-Means** es un algoritmo de aprendizaje no supervisado que particiona un conjunto de datos en `K` clústeres, donde cada punto de datos pertenece al clúster con la media más cercana. Es ampliamente utilizado para:
+
+- Segmentación de clientes.
+- Identificación de patrones en los datos.
+- Reducción de dimensionalidad en grandes conjuntos de datos.
+
+### Pasos clave en K-Means:
+1. Inicializar aleatoriamente los centroides de `K` clústeres.
+2. Asignar cada punto de datos al centroide más cercano.
+3. Actualizar los centroides en función de la media de los puntos asignados.
+4. Repetir hasta que los centroides ya no cambien significativamente.
+
+---
+
+## Flujo de Trabajo del Proyecto
+### 1. Preprocesamiento de Datos
+- Se cargó el conjunto de datos y se limpiaron duplicados y valores nulos.
+- Se convirtieron columnas como `InvoiceDate` a formatos apropiados para cálculos.
+
+### 2. Cálculo RFM
+- Se calcularon los valores de Recencia, Frecuencia y Monetario para cada cliente.
+
+### 3. Clustering con K-Means
+- Se determinó el número óptimo de clústeres (`K`) utilizando:
+  - **Método del Codo**
+  - **Puntaje de Silueta**
+- Se segmentaron los clientes en 5 clústeres según sus puntajes RFM.
+
+### 4. Análisis de Pareto
+- Se aplicó el Principio de Pareto (regla 80/20) para identificar al 20% superior de clientes que contribuyen al 80% de los ingresos.
+
+### 5. Recomendaciones Empresariales
+- Se proporcionaron insights accionables para retener a clientes de alto valor y mejorar el compromiso en todos los segmentos.
+
+---
+
+## Resultados Clave
+### Segmentos de Clientes
+- **Clúster 2:** Clientes de alto valor con alta frecuencia y valores monetarios.
+- **Clúster 3:** Clientes leales y valiosos.
+- **Clúster 0 y 1:** Clientes promedio con compromiso moderado.
+- **Clúster 4:** Clientes nuevos con bajo compromiso.
+
+### Aspectos Destacados del Análisis de Pareto
+- El 20% superior de clientes (aproximadamente 1,363 clientes) contribuyen al 80% del ingreso total.
+
+---
+
+## Archivos en el Repositorio
+- `RFModelK-means.ipynb`: Notebook Jupyter con todo el análisis.
+- `online_retail_listing.csv`: Conjunto de datos utilizado en el proyecto.
+- `README.md`: Documentación del proyecto.
+- `requirements.txt`: Archivo para importar las bibliotecas necesarias.
+
+---
+
+## Cómo Ejecutar el Notebook
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/DavidZerpa96/RFM_model.git
+   ```
+2. Navega al directorio:
+   ```bash
+   cd RFM_model
+   ```
+3. Instala las dependencias (si es necesario):
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Abre el Notebook Jupyter:
+   ```bash
+   jupyter notebook RFModelK-means.ipynb
+   ```
+
+---
+
+## Mejoras Futuras
+- Integrar la segmentación de clientes en tiempo real con datos en vivo.
+- Utilizar técnicas de clustering adicionales como DBSCAN para comparación.
+- Visualizar métricas adicionales como el valor de vida del cliente (CLV).
+
+------------------------------------- ENGLISH VERSION ------------------------------------
+
 # RFM Model with K-Means for Retail Sales
 
 ## Overview
